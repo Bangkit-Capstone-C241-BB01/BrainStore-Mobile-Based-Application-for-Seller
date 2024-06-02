@@ -15,6 +15,8 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField("String", "BASE_URL", "\"https://backend-api-cloudcomputing-2ia3i7zuma-et.a.run.app/\"")
     }
 
     buildTypes {
@@ -36,13 +38,17 @@ android {
 
     buildFeatures{
         viewBinding = true
+        buildConfig = true
     }
+
+
+
 }
 
 dependencies {
 
     implementation("androidx.core:core-ktx:1.13.1")
-    implementation("androidx.appcompat:appcompat:1.6.1")
+    implementation("androidx.appcompat:appcompat:1.7.0")
     implementation("com.google.android.material:material:1.12.0")
     implementation ("androidx.navigation:navigation-fragment-ktx:2.7.7")
     implementation ("androidx.navigation:navigation-ui-ktx:2.7.7")
