@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.welcome.WelcomeActivity">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="72dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints,UseCompoundDrawables">
+
+        <ImageView
+            android:layout_width="59dp"
+            android:layout_height="59dp"
+            android:contentDescription="@string/icon_image"
+            android:src="@drawable/icon_logo" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/roboto_bold"
+            android:padding="12dp"
+            android:text="@string/brain_store"
+            android:textColor="@color/primary_navy"
+            android:textSize="24sp" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/illustration"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="66dp"
+        android:layout_marginEnd="56dp"
+        android:contentDescription="@string/illustration_description"
+        android:scaleType="centerCrop"
+        android:src="@drawable/illustration_welcome"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/welcome_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="@string/welcome_title"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/illustration"
+        app:layout_constraintTop_toBottomOf="@+id/illustration" />
+
+    <TextView
+        android:id="@+id/welcome_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/roboto_regular"
+        android:text="@string/welcome_description"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/illustration"
+        app:layout_constraintStart_toStartOf="@+id/illustration"
+        app:layout_constraintTop_toBottomOf="@+id/welcome_title"
+        tools:ignore="TextSizeCheck" />
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:background="@drawable/button_stroke"
+        android:fontFamily="@font/roboto_medium"
+        android:text="@string/login"
+        android:textColor="@color/primary_navy"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/welcome_description"
+        app:layout_constraintStart_toStartOf="@+id/welcome_description"
+        app:layout_constraintTop_toBottomOf="@+id/welcome_description" />
+
+    <Button
+        android:id="@+id/btn_register"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/button_rounded"
+        android:fontFamily="@font/roboto_medium"
+        android:text="@string/register"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/btn_login"
+        app:layout_constraintStart_toStartOf="@+id/btn_login"
+        app:layout_constraintTop_toBottomOf="@+id/btn_login" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

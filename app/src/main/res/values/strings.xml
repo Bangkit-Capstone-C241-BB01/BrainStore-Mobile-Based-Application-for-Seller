@@ -1,0 +1,70 @@
+<resources>
+    <string name="app_name">Braincore Seller App</string>
+    <string name="image_description">image decsription</string>
+    <string name="icon_image">icon image</string>
+    <string name="brain_store">BrainStore</string>
+    <string name="illustration_description">illustration description</string>
+    <string name="welcome_title">Welcome to BrainStore!</string>
+    <string name="welcome_description">A convenient shopping app, ready to meet your needs anytime, anywhere.</string>
+    <string name="login">Log In</string>
+    <string name="register">Register</string>
+    <string name="login_title">Login Your Account</string>
+    <string name="login_description">“Login now to access your store”</string>
+    <string name="error_password_too_short">Password tidak boleh kurang dari 8 karakter</string>
+    <string name="error_invalid_email">Masukkan email dengan benar</string>
+    <string name="input_email">Masukan Email</string>
+    <string name="input_password">Password</string>
+    <string name="forget_password"><u>Forget your password ?</u></string>
+    <string name="or">OR</string>
+    <string name="register_title">Create Account</string>
+    <string name="register_description">\"Let\'s get started! Register your store now on BrainStore to begin selling your products!”</string>
+    <string name="input_seller_name">Seller Name</string>
+    <string name="input_store_name">Store Name</string>
+    <string name="input_store_email">Store Email</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="detail_image_description">Detail image description</string>
+    <string name="product_title">LEAVEN K620 keyboard mechanical tkl rgb murah type-c wired blue switch red</string>
+    <string name="icon_edit">Icon Edit</string>
+    <string name="price_product">RP 280.000</string>
+    <string name="spesifikasi">Spesifikasi</string>
+    <string name="icon_forward">icon forward</string>
+    <string name="description">Description</string>
+    <string name="description_product">CTC E-sport Pelanggan yang terhormat: Halo. Selamat datang di Game Mall, kami akan melayani Anda dengan sepenuh hati! Ikuti kami untuk kupon lainnya Semua barang dalam stok dan dikirim dari Jakarta] Kami mengirimkan dalam waktu 24 jam setelah pesanan Anda] Paket dapat diterima dalam waktu 2-7 hari] Mohon periksa dan bungkus dengan benar sebelum mengirim untuk menghindari kerusakan selama pengiriman] Layanan yang kami sediakan: [Jaminan Kualitas] Produk disegel di pabrik dan dijamin baru Pertukaran Gratis 7 Hari] Jika Anda tidak puas dengan produk, Anda dapat menukarnya dalam waktu 7 hari. Garansi 3 tahun] Kondisi garansi Selama masa garansi, produk pihak lain (garansi sejak tanggal pembelian) dan sesuai dengan ketentuan garansi yang ditentukan, memberikan kartu garansi 3 tahun</string>
+    <string name="icon_rating">icon rating</string>
+    <string name="rating">4/5</string>
+    <string name="stock">stok 42</string>
+    <string name="your_product">Your Product</string>
+    <string name="gambar_product">Gambar Produk</string>
+    <string name="product_name">Nama Produk</string>
+    <string name="placeholder_product">Mis. Kaos Lengan pendek</string>
+    <string name="product_description">Deskripsi Produk</string>
+    <string name="placeholder_description">Masukan Deskripsi</string>
+    <string name="category">Kategori</string>
+    <string name="select_category">select category</string>
+    <string name="product_price">Harga Produk</string>
+    <string name="placeholder_price">Masukan harga</string>
+    <string name="product_stock">Stok Produk</string>
+    <string name="placeholder_stock">masukan stok produk</string>
+    <string name="home">Home</string>
+    <string name="favorite">Favorite</string>
+    <string name="upload">New</string>
+    <string name="chat">Chat</string>
+    <string name="account">Account</string>
+    <string name="seller_img">Seller image</string>
+    <string name="change_image">Change Image</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="store_address">Store Address</string>
+    <string name="address_braincore">Jl. sedikit lagi, No.0H</string>
+    <string name="brain_store_email">Brainstore@gmail.com</string>
+    <string name="phone_number">No Telp.</string>
+    <string name="phone_braincore">+62 8123-4567-8910</string>
+    <string name="edit_data">Edit Data</string>
+    <string name="save_data">Save Data</string>
+    <string name="language">Language</string>
+    <string name="help_center">Help Center</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+</resources>
