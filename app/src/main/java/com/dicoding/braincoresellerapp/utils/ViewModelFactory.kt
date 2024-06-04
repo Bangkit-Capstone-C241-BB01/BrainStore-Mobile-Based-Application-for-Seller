@@ -6,6 +6,8 @@ import androidx.lifecycle.ViewModelProvider
 import com.dicoding.braincoresellerapp.di.Injection
 import com.dicoding.braincoresellerapp.ui.login.LoginViewModel
 import com.dicoding.braincoresellerapp.ui.register.RegisterViewModel
+import com.dicoding.braincoresellerapp.ui.setting.SettingViewModel
+import com.dicoding.braincoresellerapp.ui.upload.UploadViewModel
 
 @Suppress("UNCHECKED_CAST")
 class ViewModelFactory (private val context: Context) : ViewModelProvider.Factory {
@@ -16,6 +18,12 @@ class ViewModelFactory (private val context: Context) : ViewModelProvider.Factor
             }
             modelClass.isAssignableFrom(LoginViewModel::class.java) -> {
                 LoginViewModel(Injection.provideRepository(context)) as T
+            }
+            modelClass.isAssignableFrom(SettingViewModel::class.java) -> {
+                SettingViewModel(Injection.provideRepository(context)) as T
+            }
+            modelClass.isAssignableFrom(UploadViewModel::class.java) -> {
+                UploadViewModel(Injection.provideRepository(context)) as T
             }
             else -> throw IllegalArgumentException("Unknown ViewModel Class")
         }

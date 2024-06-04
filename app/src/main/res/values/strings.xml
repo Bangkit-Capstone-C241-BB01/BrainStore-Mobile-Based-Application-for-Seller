@@ -68,4 +68,12 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="logout">Log Out</string>
+    <string name="specifications">Product Spesifikasi</string>
+    <string name="placeholder_specifications">Masukan Spesifikasi</string>
+    <string-array name="category_array">
+        <item> Music</item>
+        <item>Sport</item>
+        <item>Electronic</item>
+        <item>Gadget</item>
+    </string-array>
 </resources>

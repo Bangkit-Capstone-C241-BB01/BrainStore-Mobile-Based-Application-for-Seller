@@ -9,13 +9,16 @@ import com.dicoding.braincoresellerapp.data.response.RegisterRequest
 import com.dicoding.braincoresellerapp.data.response.RegisterResponse
 import com.dicoding.braincoresellerapp.data.response.login.LoginRequest
 import com.dicoding.braincoresellerapp.data.response.login.LoginResponse
+import com.dicoding.braincoresellerapp.data.response.upload.UploadResponse
 import com.dicoding.braincoresellerapp.data.retrofit.ApiConfig
 import com.dicoding.braincoresellerapp.utils.Preference
 import kotlinx.coroutines.flow.first
+import okhttp3.MultipartBody
+import okhttp3.RequestBody
 
 class SellerRepository (private val context: Context) {
 
-    private val apiService = ApiConfig.getApiService()
+    private val apiService = ApiConfig.getApiService(context)
 
     fun postRegister(registerRequest: RegisterRequest): LiveData<Result<RegisterResponse>> = liveData {
         emit(Result.Loading)
@@ -35,6 +38,27 @@ class SellerRepository (private val context: Context) {
             emit(Result.Success(response))
         }catch (e: Exception){
             Log.e("SellerRepository", "postLogin: ${e.message.toString()}")
+            emit(Result.Error(e.message.toString()))
+        }
+    }
+
+    fun uploadProduct(
+        imgProduct: MultipartBody.Part,
+        productName: RequestBody,
+        productPrice: RequestBody,
+        productSpec: RequestBody,
+        productDesc: RequestBody,
+        productStock: RequestBody,
+        productCategory: RequestBody
+    ): LiveData<Result<UploadResponse>> = liveData {
+        emit(Result.Loading)
+        try {
+            val response = apiService.upload(
+                imgProduct, productName, productPrice, productSpec, productDesc, productStock, productCategory
+            )
+            emit(Result.Success(response))
+        } catch (e: Exception){
+            Log.e("SellerRepository", "uploadProduct: ${e.message.toString()}")
             emit(Result.Error(e.message.toString()))
         }
     }
