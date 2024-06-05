@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="4dp">
+
+   <androidx.constraintlayout.widget.ConstraintLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_margin="4dp">
+
+       <ImageView
+           android:id="@+id/image_product"
+           android:layout_width="0dp"
+           android:layout_height="160dp"
+           android:contentDescription="@string/description_product"
+           android:src="@color/grey"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintStart_toStartOf="parent"
+           tools:ignore="MissingConstraints,ImageContrastCheck" />
+
+       <TextView
+           android:id="@+id/product_name"
+           android:layout_width="0dp"
+           android:layout_height="wrap_content"
+           android:fontFamily="@font/roboto_medium"
+           android:maxLines="1"
+           android:padding="4dp"
+           android:text="@string/products_name"
+           android:textSize="14sp"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintStart_toStartOf="@+id/image_product"
+           app:layout_constraintTop_toBottomOf="@+id/image_product"
+           tools:ignore="TextContrastCheck" />
+
+       <TextView
+           android:id="@+id/product_price"
+           android:layout_width="0dp"
+           android:layout_height="wrap_content"
+           android:fontFamily="@font/roboto_medium"
+           android:maxLines="1"
+           android:padding="4dp"
+           android:text="@string/price_product"
+           android:textSize="14sp"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintStart_toStartOf="@+id/product_name"
+           app:layout_constraintTop_toBottomOf="@+id/product_name"
+           tools:ignore="TextContrastCheck" />
+
+       <LinearLayout
+           android:id="@+id/linearLayout2"
+           android:layout_width="0dp"
+           android:padding="4dp"
+           android:layout_height="wrap_content"
+           app:layout_constraintStart_toStartOf="@+id/product_price"
+           app:layout_constraintTop_toBottomOf="@+id/product_price"
+           tools:ignore="UseCompoundDrawables">
+
+           <ImageView
+               android:layout_width="16dp"
+               android:layout_height="16dp"
+               android:layout_marginEnd="4dp"
+               android:contentDescription="@string/icon_rating"
+               android:src="@drawable/star"
+               tools:ignore="ImageContrastCheck" />
+
+           <TextView
+               android:id="@+id/product_rating"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:fontFamily="@font/roboto_regular"
+               android:text="@string/rating"
+               android:textColor="@color/disable"
+               android:textSize="12sp"
+               tools:ignore="TextContrastCheck" />
+       </LinearLayout>
+
+
+       <View
+           android:id="@+id/overlay"
+           android:layout_width="0dp"
+           android:layout_height="0dp"
+           android:background="#80000000"
+           android:visibility="gone"
+           app:layout_constraintTop_toTopOf="parent"
+           app:layout_constraintBottom_toBottomOf="parent"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintEnd_toEndOf="parent"
+           tools:visibility="visible"/>
+
+       <Button
+           android:id="@+id/appeal"
+           android:layout_width="120dp"
+           android:layout_height="wrap_content"
+           android:backgroundTint="#26FA4343"
+           android:text="@string/appeal"
+           android:textColor="@color/warning"
+           android:visibility="gone"
+           app:layout_constraintBottom_toBottomOf="parent"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toTopOf="parent"
+           tools:ignore="TextContrastCheck"
+           tools:visibility="visible" />
+   </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

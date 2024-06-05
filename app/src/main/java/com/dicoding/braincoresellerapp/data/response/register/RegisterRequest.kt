@@ -1,4 +1,4 @@
-package com.dicoding.braincoresellerapp.data.response
+package com.dicoding.braincoresellerapp.data.response.register
 
 data class RegisterRequest(
     val user_name: String,

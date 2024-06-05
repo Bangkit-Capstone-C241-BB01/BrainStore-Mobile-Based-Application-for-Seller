@@ -5,10 +5,14 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.liveData
 import com.dicoding.braincoresellerapp.data.modal.Result
-import com.dicoding.braincoresellerapp.data.response.RegisterRequest
-import com.dicoding.braincoresellerapp.data.response.RegisterResponse
+import com.dicoding.braincoresellerapp.data.response.account.SellerResponse
+import com.dicoding.braincoresellerapp.data.response.appeal.AppealRequest
+import com.dicoding.braincoresellerapp.data.response.appeal.AppealsResponse
 import com.dicoding.braincoresellerapp.data.response.login.LoginRequest
 import com.dicoding.braincoresellerapp.data.response.login.LoginResponse
+import com.dicoding.braincoresellerapp.data.response.product.ProductResponse
+import com.dicoding.braincoresellerapp.data.response.register.RegisterRequest
+import com.dicoding.braincoresellerapp.data.response.register.RegisterResponse
 import com.dicoding.braincoresellerapp.data.response.upload.UploadResponse
 import com.dicoding.braincoresellerapp.data.retrofit.ApiConfig
 import com.dicoding.braincoresellerapp.utils.Preference
@@ -42,6 +46,16 @@ class SellerRepository (private val context: Context) {
         }
     }
 
+    fun postAppeal(appealRequest: AppealRequest): LiveData<Result<AppealsResponse>> = liveData {
+        emit(Result.Loading)
+        try {
+            val response = apiService.appeals(appealRequest)
+            emit(Result.Success(response))
+        }catch (e: Exception){
+            Log.e("SellerRepository", "postAppeal: ${e.message.toString()}")
+        }
+    }
+
     fun uploadProduct(
         imgProduct: MultipartBody.Part,
         productName: RequestBody,
@@ -62,6 +76,29 @@ class SellerRepository (private val context: Context) {
             emit(Result.Error(e.message.toString()))
         }
     }
+
+    fun getSellerProduct(): LiveData<Result<ProductResponse>> = liveData {
+        emit(Result.Loading)
+        try {
+            val response = apiService.products()
+            emit(Result.Success(response))
+        } catch (e:Exception){
+            Log.e("SellerRepository", "getSellerProducts: ${e.message.toString()}")
+            emit(Result.Error(e.message.toString()))
+        }
+    }
+
+    fun getSellerAccount(): LiveData<Result<SellerResponse>> = liveData {
+        emit(Result.Loading)
+        try {
+            val response = apiService.sellerAccount()
+            emit(Result.Success(response))
+        } catch (e:Exception){
+            Log.e("SellerRepository", "getSellerAccount: ${e.message.toString()}")
+            emit(Result.Error(e.message.toString()))
+        }
+    }
+
 
     suspend fun logOut() {
         Preference.logOut(context)

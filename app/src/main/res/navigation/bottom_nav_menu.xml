@@ -8,7 +8,15 @@
         android:id="@+id/homeFragment"
         android:name="com.dicoding.braincoresellerapp.ui.product.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_appealFragment"
+            app:destination="@id/appealFragment" />
+
+    </fragment>
 
     <fragment
         android:id="@+id/uploadFragment"
@@ -40,4 +48,18 @@
         android:name="com.dicoding.braincoresellerapp.ui.account.AccountFragment"
         android:label="fragment_account"
         tools:layout="@layout/fragment_account" />
+    <fragment
+        android:id="@+id/appealFragment"
+        android:name="com.dicoding.braincoresellerapp.ui.appeal.AppealFragment"
+        android:label="fragment_appeal"
+        tools:layout="@layout/fragment_appeal" >
+        <action
+            android:id="@+id/action_appealFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.dicoding.braincoresellerapp.ui.detail.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" />
 </navigation>

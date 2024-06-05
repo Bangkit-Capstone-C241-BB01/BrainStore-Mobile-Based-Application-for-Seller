@@ -1,4 +1,4 @@
-package com.dicoding.braincoresellerapp.data.response
+package com.dicoding.braincoresellerapp.data.response.register
 
 import com.google.gson.annotations.SerializedName
 

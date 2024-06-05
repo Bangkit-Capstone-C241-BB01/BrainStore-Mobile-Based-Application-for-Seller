@@ -70,6 +70,15 @@
     <string name="logout">Log Out</string>
     <string name="specifications">Product Spesifikasi</string>
     <string name="placeholder_specifications">Masukan Spesifikasi</string>
+    <string name="products_name">LEAVEN K620 keyboard...</string>
+    <string name="status_img">status image</string>
+    <string name="appeal">Appeal</string>
+    <string name="maintenance">sedang maintenance</string>
+    <string name="appeal_title">Form Banding Product</string>
+    <string name="appeal_description">silahkan masukan keluhan anda</string>
+    <string name="description_appeals">Deskripsi keluhan anda</string>
+    <string name="submit_appeals">Ajukan Banding</string>
+    <string name="stock_format">Stok: %d</string>
     <string-array name="category_array">
         <item> Music</item>
         <item>Sport</item>

@@ -9,7 +9,9 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import com.bumptech.glide.Glide
 import com.dicoding.braincoresellerapp.R
+import com.dicoding.braincoresellerapp.data.modal.Result
 import com.dicoding.braincoresellerapp.databinding.FragmentSettingBinding
 import com.dicoding.braincoresellerapp.ui.login.LoginActivity
 import com.dicoding.braincoresellerapp.utils.ViewModelFactory
@@ -34,12 +36,35 @@ class SettingFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        getSellerAccount()
+
         binding.logoutBtn.setOnClickListener{
             logOut()
         }
 
         binding.account.setOnClickListener{
             findNavController().navigate(R.id.action_settingFragment_to_accountFragment)
+        }
+    }
+
+    private fun getSellerAccount(){
+        viewModel.getSellerAccount().observe(viewLifecycleOwner){result ->
+            when (result) {
+                is Result.Loading -> {
+                    //loading state
+                }
+                is Result.Success -> {
+                    val seller = result.data
+                    binding.tvUsername.text = seller.storeName
+                    binding.tvEmail.text = seller.userName
+                    Glide.with(this)
+                        .load(seller.storeImg)
+                        .into(binding.imgUser)
+                }
+                is Result.Error -> {
+                    //state error
+                }
+            }
         }
     }
 

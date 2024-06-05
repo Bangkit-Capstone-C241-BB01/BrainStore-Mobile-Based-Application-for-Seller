@@ -1,13 +1,18 @@
 package com.dicoding.braincoresellerapp.data.retrofit
 
-import com.dicoding.braincoresellerapp.data.response.RegisterRequest
-import com.dicoding.braincoresellerapp.data.response.RegisterResponse
+import com.dicoding.braincoresellerapp.data.response.register.RegisterRequest
+import com.dicoding.braincoresellerapp.data.response.register.RegisterResponse
+import com.dicoding.braincoresellerapp.data.response.account.SellerResponse
+import com.dicoding.braincoresellerapp.data.response.appeal.AppealRequest
+import com.dicoding.braincoresellerapp.data.response.appeal.AppealsResponse
 import com.dicoding.braincoresellerapp.data.response.login.LoginRequest
 import com.dicoding.braincoresellerapp.data.response.login.LoginResponse
+import com.dicoding.braincoresellerapp.data.response.product.ProductResponse
 import com.dicoding.braincoresellerapp.data.response.upload.UploadResponse
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import retrofit2.http.Body
+import retrofit2.http.GET
 import retrofit2.http.Multipart
 import retrofit2.http.POST
 import retrofit2.http.Part
@@ -36,6 +41,17 @@ interface ApiService {
         @Part("product_stock") productStock: RequestBody,
         @Part("product_category") productCategory: RequestBody
     ):UploadResponse
+
+    @GET("sellers/products")
+    suspend fun products(): ProductResponse
+
+    @GET ("sellers/store")
+    suspend fun  sellerAccount(): SellerResponse
+
+    @POST("sellers/appeals")
+    suspend fun appeals(
+        @Body request: AppealRequest
+    ): AppealsResponse
 
 }
 

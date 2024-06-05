@@ -7,8 +7,8 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import com.dicoding.braincoresellerapp.data.modal.Result
-import com.dicoding.braincoresellerapp.data.response.RegisterRequest
-import com.dicoding.braincoresellerapp.data.response.RegisterResponse
+import com.dicoding.braincoresellerapp.data.response.register.RegisterRequest
+import com.dicoding.braincoresellerapp.data.response.register.RegisterResponse
 import com.dicoding.braincoresellerapp.databinding.ActivityRegisterBinding
 import com.dicoding.braincoresellerapp.ui.login.LoginActivity
 import com.dicoding.braincoresellerapp.utils.ViewModelFactory
