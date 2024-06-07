@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity() {
         val navController = binding.navHostFragmentMain.getFragment<NavHostFragment>().navController
         navView.setupWithNavController(navController)
 
+
     }
 
 }

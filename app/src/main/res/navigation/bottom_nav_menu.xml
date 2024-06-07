@@ -47,7 +47,11 @@
         android:id="@+id/accountFragment"
         android:name="com.dicoding.braincoresellerapp.ui.account.AccountFragment"
         android:label="fragment_account"
-        tools:layout="@layout/fragment_account" />
+        tools:layout="@layout/fragment_account" >
+        <action
+            android:id="@+id/action_accountFragment_to_settingFragment"
+            app:destination="@id/settingFragment" />
+    </fragment>
     <fragment
         android:id="@+id/appealFragment"
         android:name="com.dicoding.braincoresellerapp.ui.appeal.AppealFragment"
@@ -61,5 +65,9 @@
         android:id="@+id/detailFragment"
         android:name="com.dicoding.braincoresellerapp.ui.detail.DetailFragment"
         android:label="fragment_detail"
-        tools:layout="@layout/fragment_detail" />
+        tools:layout="@layout/fragment_detail" >
+        <action
+            android:id="@+id/action_detailFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
 </navigation>

@@ -12,6 +12,7 @@ import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.dicoding.braincoresellerapp.R
 import com.dicoding.braincoresellerapp.data.modal.Result
+import com.dicoding.braincoresellerapp.data.response.account.SellerResponse
 import com.dicoding.braincoresellerapp.databinding.FragmentSettingBinding
 import com.dicoding.braincoresellerapp.ui.login.LoginActivity
 import com.dicoding.braincoresellerapp.utils.ViewModelFactory
@@ -24,6 +25,7 @@ class SettingFragment : Fragment() {
     private val viewModel: SettingViewModel by viewModels {
         ViewModelFactory(requireContext())
     }
+    private lateinit var seller: SellerResponse
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -43,7 +45,10 @@ class SettingFragment : Fragment() {
         }
 
         binding.account.setOnClickListener{
-            findNavController().navigate(R.id.action_settingFragment_to_accountFragment)
+            val bundle = Bundle().apply {
+                putParcelable("SELLER_DATA", seller)
+            }
+            findNavController().navigate(R.id.action_settingFragment_to_accountFragment, bundle)
         }
     }
 
@@ -54,7 +59,7 @@ class SettingFragment : Fragment() {
                     //loading state
                 }
                 is Result.Success -> {
-                    val seller = result.data
+                    seller = result.data
                     binding.tvUsername.text = seller.storeName
                     binding.tvEmail.text = seller.userName
                     Glide.with(this)

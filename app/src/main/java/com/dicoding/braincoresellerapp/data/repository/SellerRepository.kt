@@ -6,6 +6,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.liveData
 import com.dicoding.braincoresellerapp.data.modal.Result
 import com.dicoding.braincoresellerapp.data.response.account.SellerResponse
+import com.dicoding.braincoresellerapp.data.response.account.UpdateStoreResponse
 import com.dicoding.braincoresellerapp.data.response.appeal.AppealRequest
 import com.dicoding.braincoresellerapp.data.response.appeal.AppealsResponse
 import com.dicoding.braincoresellerapp.data.response.login.LoginRequest
@@ -99,6 +100,20 @@ class SellerRepository (private val context: Context) {
         }
     }
 
+    fun updateStoreData(
+        imgStore: MultipartBody.Part,
+        storeDesc: RequestBody,
+        storeLocation: RequestBody
+    ): LiveData<Result<UpdateStoreResponse>> = liveData {
+        emit(Result.Loading)
+        try {
+            val response = apiService.update(imgStore, storeDesc, storeLocation)
+            emit(Result.Success(response))
+        }catch (e: Exception){
+            Log.e("SellerRepository", "updateSellerData: ${e.message.toString()}")
+            emit(Result.Error(e.message.toString()))
+        }
+    }
 
     suspend fun logOut() {
         Preference.logOut(context)

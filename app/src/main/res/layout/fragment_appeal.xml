@@ -6,12 +6,42 @@
     android:layout_height="match_parent"
     tools:context=".ui.appeal.AppealFragment">
 
+    <LinearLayout
+        android:id="@+id/action_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="4dp"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="UseCompoundDrawables">
+
+        <ImageView
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="120dp"
+            android:contentDescription="@string/description"
+            android:src="@drawable/back_icon" />
+
+        <TextView
+            android:textColor="@color/primary_navy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@string/form_appeal"
+            android:textSize="18sp" />
+    </LinearLayout>
+
     <TextView
         android:id="@+id/appeal_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="150dp"
         android:fontFamily="@font/roboto_bold"
         android:text="@string/appeal_title"
         android:textSize="18sp"
@@ -20,32 +50,53 @@
 
     <TextView
         android:id="@+id/appeal_description"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/roboto_regular"
-        android:text="@string/appeal_description"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="@+id/appeal_title"
-        app:layout_constraintTop_toBottomOf="@+id/appeal_title" />
-
-    <EditText
-        android:id="@+id/inputAppealDes"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
-        android:gravity="top"
-        android:hint="@string/description_appeals"
-        android:lines="5"
-        android:maxLines="5"
-        android:padding="8dp"
-        android:textColorHint="@color/disable"
+        android:fontFamily="@font/roboto_regular"
+        android:text="@string/appeal_description"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appeal_description"
-        tools:ignore="Autofill,TextFields" />
+        app:layout_constraintTop_toBottomOf="@+id/appeal_title" />
+
+    <TextView
+        android:id="@+id/tv_input_appeal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/input_appeal"
+        android:fontFamily="@font/roboto_medium"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/appeal_description"
+        app:layout_constraintStart_toStartOf="@+id/appeal_description"
+        app:layout_constraintTop_toBottomOf="@+id/appeal_description" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/input_desc_appeal_layout"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_input_appeal"
+        app:layout_constraintStart_toStartOf="@+id/tv_input_appeal"
+        app:layout_constraintTop_toBottomOf="@+id/tv_input_appeal">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputAppealDes"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/roboto_regular"
+            android:gravity="top"
+            android:inputType="text"
+            android:lines="4"
+            android:maxLines="4"
+            android:padding="8dp"
+            android:textColorHint="@color/disable"
+            android:textSize="14sp"
+            tools:ignore="TouchTargetSizeCheck,TextContrastCheck,DuplicateSpeakableTextCheck,SpeakableTextPresentCheck" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/submitAppeal"
@@ -54,8 +105,34 @@
         android:layout_marginTop="32dp"
         android:background="@drawable/button_rounded"
         android:text="@string/submit_appeals"
-        app:layout_constraintEnd_toEndOf="@+id/inputAppealDes"
-        app:layout_constraintTop_toBottomOf="@+id/inputAppealDes" />
+        app:layout_constraintEnd_toEndOf="@+id/input_desc_appeal_layout"
+        app:layout_constraintTop_toBottomOf="@+id/input_desc_appeal_layout" />
+
+    <TextView
+        android:id="@+id/instruction"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/roboto_medium"
+        android:text="@string/instruction"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/instruction_desc"
+        app:layout_constraintEnd_toEndOf="@+id/input_desc_appeal_layout"
+        app:layout_constraintStart_toStartOf="@+id/input_desc_appeal_layout" />
+
+    <TextView
+        android:id="@+id/instruction_desc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="48dp"
+        android:fontFamily="@font/roboto_regular"
+        android:text="@string/instruction_desc"
+        android:textColor="@color/disable"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/instruction"
+        app:layout_constraintStart_toStartOf="@+id/instruction" />
+
 
     <ProgressBar
         android:id="@+id/progressBar"

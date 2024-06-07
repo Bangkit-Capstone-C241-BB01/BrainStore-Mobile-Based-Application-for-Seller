@@ -36,6 +36,7 @@ class AppealFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.btnBack.setOnClickListener { findNavController().navigate(R.id.action_appealFragment_to_homeFragment) }
         arguments?.let {
             productId = it.getInt("PRODUCT_ID")
         }

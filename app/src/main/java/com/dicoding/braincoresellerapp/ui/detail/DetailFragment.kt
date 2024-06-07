@@ -1,11 +1,11 @@
 package com.dicoding.braincoresellerapp.ui.detail
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.dicoding.braincoresellerapp.R
 import com.dicoding.braincoresellerapp.databinding.FragmentDetailBinding
@@ -24,10 +24,10 @@ class DetailFragment : Fragment() {
         _binding = FragmentDetailBinding.inflate(inflater, container, false)
         return binding.root
     }
-
-    @SuppressLint("StringFormatMatches")
+    
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.btnBack.setOnClickListener { findNavController().navigate(R.id.action_detailFragment_to_homeFragment) }
         arguments?.let { bundle ->
             binding.productTitle.text = bundle.getString("PRODUCT_NAME")
             val price = bundle.getString("PRODUCT_PRICE")

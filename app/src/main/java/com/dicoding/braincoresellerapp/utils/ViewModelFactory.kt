@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.dicoding.braincoresellerapp.di.Injection
+import com.dicoding.braincoresellerapp.ui.account.AccountViewModel
 import com.dicoding.braincoresellerapp.ui.appeal.AppealViewModel
 import com.dicoding.braincoresellerapp.ui.login.LoginViewModel
 import com.dicoding.braincoresellerapp.ui.product.HomeViewModel
@@ -33,6 +34,10 @@ class ViewModelFactory (private val context: Context) : ViewModelProvider.Factor
             modelClass.isAssignableFrom(AppealViewModel::class.java) -> {
                 AppealViewModel(Injection.provideRepository(context)) as T
             }
+            modelClass.isAssignableFrom(AccountViewModel::class.java) -> {
+                AccountViewModel(Injection.provideRepository(context)) as T
+            }
+
             else -> throw IllegalArgumentException("Unknown ViewModel Class")
         }
     }

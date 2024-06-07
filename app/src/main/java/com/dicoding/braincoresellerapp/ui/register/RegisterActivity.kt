@@ -1,14 +1,13 @@
 package com.dicoding.braincoresellerapp.ui.register
 
+import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import com.dicoding.braincoresellerapp.data.modal.Result
 import com.dicoding.braincoresellerapp.data.response.register.RegisterRequest
-import com.dicoding.braincoresellerapp.data.response.register.RegisterResponse
 import com.dicoding.braincoresellerapp.databinding.ActivityRegisterBinding
 import com.dicoding.braincoresellerapp.ui.login.LoginActivity
 import com.dicoding.braincoresellerapp.utils.ViewModelFactory
@@ -56,28 +55,29 @@ class RegisterActivity : AppCompatActivity() {
                             }
                             is Result.Success -> {
                                 showLoading(false)
-                                processRegister(it.data)
+                                showAlertDialog("Success", "Sign Up is Success, Get login!")
+                                navigateToLogin()
                             }
                             is Result.Error -> {
                                 showLoading(false)
-                                Toast.makeText(this@RegisterActivity, it.error, Toast.LENGTH_LONG).show()
+                                showAlertDialog("Error", "Error Sign Up")
                             }
                         }
                     }
                 } else {
-                    Toast.makeText(this@RegisterActivity, "Passwords do not match", Toast.LENGTH_SHORT).show()
+                    showAlertDialog("Error", "Passwords do not match")
                 }
             }
         }
     }
 
-    private fun processRegister(data: RegisterResponse) {
-        if (data.msg == "Error Sign Up") {
-            Toast.makeText(this, "Error Sign Up", Toast.LENGTH_LONG).show()
-        } else {
-            Toast.makeText(this, "Sign Up is Success, Get login!", Toast.LENGTH_LONG).show()
-            navigateToLogin()
-        }
+
+    private fun showAlertDialog(title: String, message: String) {
+        AlertDialog.Builder(this)
+            .setTitle(title)
+            .setMessage(message)
+            .setPositiveButton("OK") { dialog, _ -> dialog.dismiss() }
+            .show()
     }
 
     private fun showLoading(state: Boolean) {

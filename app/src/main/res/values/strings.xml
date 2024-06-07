@@ -72,13 +72,19 @@
     <string name="placeholder_specifications">Masukan Spesifikasi</string>
     <string name="products_name">LEAVEN K620 keyboard...</string>
     <string name="status_img">status image</string>
-    <string name="appeal">Appeal</string>
+    <string name="banned">Ditolak</string>
     <string name="maintenance">sedang maintenance</string>
-    <string name="appeal_title">Form Banding Product</string>
-    <string name="appeal_description">silahkan masukan keluhan anda</string>
+    <string name="appeal_title">Hai Seller Brainstore!</string>
+    <string name="appeal_description">Product Anda saat ini ditolak karena tidak memenuhi kriteria dalam kualitas gambarnya. Namun jangan khawatir! Kami di sini untuk membantu Anda.</string>
     <string name="description_appeals">Deskripsi keluhan anda</string>
     <string name="submit_appeals">Ajukan Banding</string>
     <string name="stock_format">Stok: %d</string>
+    <string name="description_store">Toko elektronik</string>
+    <string name="input_store_desc">Deskripsi Toko</string>
+    <string name="input_appeal">Masukan Diskripsi Banding</string>
+    <string name="instruction">Petunjuk Pengisian Banding!</string>
+    <string name="instruction_desc">Tuliskan deskripsi banding, Berikan informasi tentang alasan perbaikan dan langkah-langkah yang telah diambil untuk meningkatkan kualitas gambar produk</string>
+    <string name="form_appeal">Form Banding</string>
     <string-array name="category_array">
         <item> Music</item>
         <item>Sport</item>

@@ -97,7 +97,7 @@
            android:layout_width="120dp"
            android:layout_height="wrap_content"
            android:backgroundTint="#26FA4343"
-           android:text="@string/appeal"
+           android:text="@string/banned"
            android:textColor="@color/warning"
            android:visibility="gone"
            app:layout_constraintBottom_toBottomOf="parent"
