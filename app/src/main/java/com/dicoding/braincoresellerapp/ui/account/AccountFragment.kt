@@ -94,6 +94,7 @@ class AccountFragment : Fragment() {
     private fun setEditTextsEnabled(enabled: Boolean) {
         binding.inputStoreDesc.isEnabled = enabled
         binding.inputStoreAddress.isEnabled = enabled
+        binding.changeImageBtn.isEnabled = enabled
     }
 
     private fun displayStoreData(seller: SellerResponse) {

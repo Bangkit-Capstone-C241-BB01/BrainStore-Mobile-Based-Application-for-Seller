@@ -41,7 +41,7 @@ class AppealFragment : Fragment() {
             productId = it.getInt("PRODUCT_ID")
         }
         binding.submitAppeal.setOnClickListener {
-            val appealDesc = binding.appealDescription.text.toString().trim()
+            val appealDesc = binding.inputAppealDes.text.toString().trim()
             if (productId != null && appealDesc.isNotEmpty()) {
                 submitAppeal(productId!!, appealDesc)
             } else {
