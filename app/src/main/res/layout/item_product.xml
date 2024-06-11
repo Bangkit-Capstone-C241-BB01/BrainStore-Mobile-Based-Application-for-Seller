@@ -4,14 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="4dp"
+    android:layout_margin="8dp"
     app:cardCornerRadius="8dp"
     app:cardElevation="4dp">
 
    <androidx.constraintlayout.widget.ConstraintLayout
        android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:layout_margin="4dp">
+       android:layout_height="wrap_content">
 
        <ImageView
            android:id="@+id/image_product"
@@ -29,7 +28,8 @@
            android:layout_height="wrap_content"
            android:fontFamily="@font/roboto_medium"
            android:maxLines="1"
-           android:padding="4dp"
+           android:paddingVertical="4dp"
+           android:paddingHorizontal="8dp"
            android:text="@string/products_name"
            android:textSize="14sp"
            app:layout_constraintEnd_toEndOf="parent"
@@ -43,7 +43,9 @@
            android:layout_height="wrap_content"
            android:fontFamily="@font/roboto_medium"
            android:maxLines="1"
-           android:padding="4dp"
+           android:paddingVertical="4dp"
+           android:paddingHorizontal="8dp"
+           android:textColor="@color/primary_navy"
            android:text="@string/price_product"
            android:textSize="14sp"
            app:layout_constraintEnd_toEndOf="parent"
@@ -54,7 +56,8 @@
        <LinearLayout
            android:id="@+id/linearLayout2"
            android:layout_width="0dp"
-           android:padding="4dp"
+           android:paddingVertical="4dp"
+           android:paddingHorizontal="8dp"
            android:layout_height="wrap_content"
            app:layout_constraintStart_toStartOf="@+id/product_price"
            app:layout_constraintTop_toBottomOf="@+id/product_price"

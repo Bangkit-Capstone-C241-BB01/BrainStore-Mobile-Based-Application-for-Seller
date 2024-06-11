@@ -10,12 +10,12 @@
               <deviceKey>
                 <Key>
                   <type value="VIRTUAL_DEVICE_PATH" />
-                  <value value="C:\Users\ACER\.android\avd\BrainStore_Testing.avd" />
+                  <value value="C:\Users\ACER\.android\avd\BrainStore_Tester.avd" />
                 </Key>
               </deviceKey>
             </Target>
           </targetSelectedWithDropDown>
-          <timeTargetWasSelectedWithDropDown value="2024-06-06T06:49:06.707710900Z" />
+          <timeTargetWasSelectedWithDropDown value="2024-06-11T06:32:11.717237Z" />
         </State>
       </entry>
     </value>

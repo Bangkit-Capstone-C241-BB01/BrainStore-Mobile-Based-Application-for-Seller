@@ -96,20 +96,20 @@ class UploadFragment : Fragment() {
         val productCategory = binding.category.text.toString().toRequestBody("text/plain".toMediaTypeOrNull())
 
         uploadViewModel.uploadProduct(
-            imgMultipart, productName, productPrice, productSpec, productDesc, productStock, productCategory
-        ).observe(viewLifecycleOwner){result ->
+            imgMultipart, productName, productPrice, productSpec, productDesc, productStock, productCategory)
+            .observe(viewLifecycleOwner){result ->
             when(result){
                 is Result.Loading -> {
                     showLoading(true)
                 }
                 is Result.Success -> {
                     showLoading(false)
-                    showAlertDialog("Success", "Product uploaded successfully.")
+                    showAlertDialog("Success",  result.data.msg ?:"Product uploaded successfully.")
                     findNavController().navigate(R.id.action_uploadFragment_to_homeFragment)
                 }
                 is Result.Error -> {
                     showLoading(false)
-                    showAlertDialog("Error", "Error uploading product: ${result.error}")
+                    showAlertDialog("Error", result.error )
                 }
             }
         }

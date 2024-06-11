@@ -9,6 +9,8 @@ import okhttp3.MultipartBody
 import okhttp3.RequestBody
 
 class UploadViewModel(private val sellerRepository: SellerRepository): ViewModel() {
+
+
     fun uploadProduct(
         imgProduct: MultipartBody.Part,
         productName: RequestBody,

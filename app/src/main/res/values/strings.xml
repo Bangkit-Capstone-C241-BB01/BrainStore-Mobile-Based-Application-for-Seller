@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Braincore Seller App</string>
+    <string name="app_name">BrainStore Seller</string>
     <string name="image_description">image decsription</string>
     <string name="icon_image">icon image</string>
     <string name="brain_store">BrainStore</string>
@@ -52,7 +52,6 @@
     <string name="account">Account</string>
     <string name="seller_img">Seller image</string>
     <string name="change_image">Change Image</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="store_address">Store Address</string>
     <string name="address_braincore">Jl. sedikit lagi, No.0H</string>
@@ -87,6 +86,7 @@
     <string name="form_appeal">Form Banding</string>
     <string-array name="category_array">
         <item> Music</item>
+        <item> Fashion</item>
         <item>Sport</item>
         <item>Electronic</item>
         <item>Gadget</item>

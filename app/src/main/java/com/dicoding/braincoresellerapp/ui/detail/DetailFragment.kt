@@ -20,7 +20,6 @@ class DetailFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        // Inflate the layout for this fragment
         _binding = FragmentDetailBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -37,7 +36,7 @@ class DetailFragment : Fragment() {
             val stock = bundle.getInt("PRODUCT_STOCK")
             binding.productStock.text = getString(R.string.stock_format, stock)
             binding.spesifikasiName.text = bundle.getString("PRODUCT_SPEC")
-            binding.descriptionProduct.text = bundle.getString("PRODUCT_DESC")
+            binding.descriptionProductText.text = bundle.getString("PRODUCT_DESC")
             Glide.with(this)
                 .load(bundle.getString("PRODUCT_IMG"))
                 .centerCrop()
